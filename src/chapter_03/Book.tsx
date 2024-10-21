@@ -1,6 +1,6 @@
 import React from "react";
 
-function Book(props) {
+function Book(props: { title: string, numOfPage: number }) {
   return (
     <div>
         <h1>{`이 책의 이름은 ${props.title} 입니다.`}</h1>
