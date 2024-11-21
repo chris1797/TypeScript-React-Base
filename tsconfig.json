@@ -1,6 +1,7 @@
 {
+  "include": ["src/**/*"],
   "compilerOptions": {
-    "target": "es5",
+    "target": "esNext",
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
