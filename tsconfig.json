@@ -2,14 +2,19 @@
   "include": ["src/**/*"],
   "compilerOptions": {
     "target": "esNext",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "module": "esNext",
+    "outDir": "dist",
+    "rootDir": "src",
+    /*
+     매개변수 같은 것들에 대한 타입 검사를 엄격하게 할 것인지
+     마이그레이션이 진행될 경우 false로 우선 설정하고 마이그레이션을 진행하면서 true로 변경하면 괜찮을 듯
+    */
     "strict": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "skipLibCheck": true,
   }
 }

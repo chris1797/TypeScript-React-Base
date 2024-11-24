@@ -1,1 +1,19 @@
-const a: number = 1;
+
+// union type
+type Status = "success" | "fail";
+
+
+// 인터페이스는 병합이 가능하다.
+interface User {
+    name: string;
+    age: number;
+    status: Status;
+}
+
+interface User {
+    email: string;
+}
+
+export const hello = (message: string) =>{
+    console.log('hello + ' + message);
+}
