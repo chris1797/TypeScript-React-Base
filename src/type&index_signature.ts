@@ -21,3 +21,24 @@ let user2: User = {
     birth: '1993-01-01',
     location: 'Busan'
 }
+
+type CountryCodes = {
+    [key: string]: string;
+};
+
+let countryCodes: CountryCodes = {
+    Korea: 'ko',
+    UnitedStates: 'us',
+    UnitedKingdom: 'uk'
+}
+
+// Index Signature
+type CountryNumberCodes = {
+    [key: string]: number;
+}
+
+let countryNumberCodes: CountryNumberCodes = {
+    Korea: 82,
+    UnitedStates: 1,
+    UnitedKingdom: 44
+}
