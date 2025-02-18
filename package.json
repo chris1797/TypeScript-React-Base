@@ -5,12 +5,15 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
+    "@stomp/stompjs": "^7.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/sockjs-client": "^1.5.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "sockjs-client": "^1.6.1",
     "tsx": "^4.19.2",
     "web-vitals": "^2.1.4"
   },
@@ -40,6 +43,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
+    "prettier": "^3.5.1",
     "typescript": "^5.6.3"
   }
 }

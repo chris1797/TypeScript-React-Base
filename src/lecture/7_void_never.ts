@@ -23,12 +23,12 @@ function infiniteLoop(): never {
 }
 
 let a: never;
-a = 123; // Error
-a = (() => {}); // Error
-a = ""; // Error
-a = undefined; // Error
-a = null; // Error
-a = new Error(); // Error
+// a = 123; // Error
+// a = (() => {}); // Error
+// a = ""; // Error
+// a = undefined; // Error
+// a = null; // Error
+// a = new Error(); // Error
 
 // never는 어떤 타입도 할당할 수 없다. never는 모든 타입의 subtype이다. 하지만, never에는 그 어떤 것도 할당할 수 없다.
 // 하지만, never에는 그 어떤 것도 할당할 수 없다. any조차도 never에는 할당할 수 없다.

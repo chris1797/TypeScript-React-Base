@@ -4,12 +4,12 @@ let strArr: string[] = ['a', 'b', 'c'];
 let boolArr: boolean[] = [true, false, true];
 
 // 타입에서 a가 1이고 b가 2인 객체 배열인데, 다른 값을 넣으면 에러가 발생한다.
-let objArr: { a: 1, b: 2 }[] = [{ a: 1, b: 2 }, { a: 2, b: 3 }];
+// let objArr: { a: 1, b: 2 }[] = [{ a: 1, b: 2 }, { a: 2, b: 3 }];
 
 let multiArr: (number | boolean)[] = [1, 2, true];
 
 // Error
-let multiArr2: number[] | boolean[] = [1, 2, true];
+// let multiArr2: number[] | boolean[] = [1, 2, true];
 
 // 다차원 배열
 let doubleArr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -39,5 +39,5 @@ const users = [
 const users2: [string, number][] = [
     ['chris', 1],
     ['ann', 2],
-    [3, 'tom'],
+    // [3, 'tom'],
 ];

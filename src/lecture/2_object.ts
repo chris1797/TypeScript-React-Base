@@ -18,5 +18,5 @@ let config :{
 }
 
 // apiKey는 수정이 가능하면 안되는데? 에러가 발생하지 않는다. 그럴때 사용하는 것이 readonly.
-config.apiKey = "123456";
+// config.apiKey = "123456";
 

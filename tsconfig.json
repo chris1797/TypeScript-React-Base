@@ -12,6 +12,7 @@
     "strict": true,
     "strictNullChecks": true, // null, undefined에 대한 타입 검사를 엄격하게 할 것인지, strict 옵션의 하위 옵션
     "moduleDetection": "force", // 각 ts 파일 모듈화
+    "moduleResolution": "node", // ts가 모듈을 해석하는 방식
     "skipLibCheck": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true

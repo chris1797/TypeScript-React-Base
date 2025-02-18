@@ -17,7 +17,7 @@ let num: number = anyVar; // any 타입은 다른 타입으로 할당할 수 있
 
 let unknownVar: unknown = 123;
 unknownVar = 'string'; // any와 마찬가지로 어떤 타입이든 할당할 수 있다. 하지만, unknown은 타입 안정성을 유지한다.
-num = unknownVar; // Error: unknown은 다른 타입으로 할당할 수 없다.
+// num = unknownVar; // Error: unknown은 다른 타입으로 할당할 수 없다.
 
 if (typeof unknownVar === 'number') {
     num = unknownVar; // unknown을 number로 할당할 수 있다.

@@ -1,10 +1,10 @@
-import * as React from "react";
-import Comment from "./Comment";
+import * as React from 'react';
+import Comment from './Comment.jsx';
 
 function CommentList(props) {
   return (
     <div>
-        <Comment />
+      <Comment />
     </div>
   );
 }
