@@ -3,7 +3,7 @@ import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 
 const SOCKET_URL = 'http://localhost:8080/ws/chat'; // 서버 WebSocket 엔드포인트
-const TOPIC = '/topic/messages'; // 구독할 STOMP 채널
+const TOPIC = (roomNo: number) => `/topic/messages/${roomNo}`; // 구독할 STOMP 채널
 const SEND_ENDPOINT = '/app/chat/send'; // 메시지 전송 엔드포인트
 
 const Chat: React.FC = () => {
@@ -18,7 +18,8 @@ const Chat: React.FC = () => {
       webSocketFactory: () => socket,
       onConnect: () => {
         console.log('Connected');
-        stompClient.subscribe(TOPIC, (msg) => {
+        stompClient.subscribe(TOPIC(1), (msg) => {
+          console.log('Received', msg);
           setMessages((prev) => [...prev, JSON.parse(msg.body).content]);
         });
       },
