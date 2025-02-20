@@ -3,7 +3,7 @@ import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 
 const SOCKET_URL = 'http://localhost:8080/ws/chat'; // 서버 WebSocket 엔드포인트
-const TOPIC = (roomNo: number) => `/topic/messages/${roomNo}`; // 구독할 STOMP 채널
+const CHAT_TOPIC = (roomNo: number) => `/topic/messages/${roomNo}`; // 구독할 STOMP 채널
 const SEND_ENDPOINT = '/app/chat/send'; // 메시지 전송 엔드포인트
 
 const Chat: React.FC = () => {
@@ -15,13 +15,20 @@ const Chat: React.FC = () => {
   useEffect(() => {
     const socket = new SockJS(SOCKET_URL);
     const stompClient = new Client({
+      connectHeaders: { channel: 'CHAT' },
       webSocketFactory: () => socket,
       onConnect: () => {
         console.log('Connected');
-        stompClient.subscribe(TOPIC(1), (msg) => {
-          console.log('Received', msg);
-          setMessages((prev) => [...prev, JSON.parse(msg.body).content]);
-        });
+        stompClient.subscribe(
+          CHAT_TOPIC(1),
+          (msg) => {
+            console.log('Received', msg);
+            const message = JSON.parse(msg.body);
+
+            setMessages((prev) => [...prev, message.message]);
+          },
+          { channel: 'CHAT' },
+        );
       },
       onStompError: (frame) => {
         console.error('STOMP Error', frame);
@@ -38,7 +45,8 @@ const Chat: React.FC = () => {
     if (client && client.connected) {
       client.publish({
         destination: SEND_ENDPOINT,
-        body: JSON.stringify({ content: message }),
+        body: JSON.stringify({ message: message }),
+        headers: { channel: 'CHAT' },
       });
       setMessage('');
     }
